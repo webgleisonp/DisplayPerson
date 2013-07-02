@@ -1,0 +1,7 @@
+d:\users\tkb07380518\documents\visual studio 2010\Projects\DisplayPerson\DisplayPerson\bin\DisplayPerson.dll
+d:\users\tkb07380518\documents\visual studio 2010\Projects\DisplayPerson\DisplayPerson\bin\DisplayPerson.pdb
+d:\users\tkb07380518\documents\visual studio 2010\Projects\DisplayPerson\DisplayPerson\bin\EntityFramework.dll
+d:\users\tkb07380518\documents\visual studio 2010\Projects\DisplayPerson\DisplayPerson\bin\EntityFramework.xml
+d:\users\tkb07380518\documents\visual studio 2010\Projects\DisplayPerson\DisplayPerson\obj\Debug\ResolveAssemblyReference.cache
+d:\users\tkb07380518\documents\visual studio 2010\Projects\DisplayPerson\DisplayPerson\obj\Debug\DisplayPerson.dll
+d:\users\tkb07380518\documents\visual studio 2010\Projects\DisplayPerson\DisplayPerson\obj\Debug\DisplayPerson.pdb

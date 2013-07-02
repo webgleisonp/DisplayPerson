@@ -1,0 +1,106 @@
+﻿@model IEnumerable<DisplayPerson.Models.Person>
+@{
+    ViewBag.Title = "Persons List";
+}
+@section JavaScript{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnImportFile").button();
+
+            $("#grid").dataTable({
+                "oLanguage": {
+                    "sProcessing": "Processando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "N&atilde;o foram encontrados resultados",
+                    "sInfo": "Mostrando de _START_ at&eacute; _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando de 0 at&eacute; 0 de 0 registros",
+                    "sInfoFiltered": "(filtrado de _MAX_ registros no total)",
+                    "sSearch": "Buscar:",
+                    "oPaginate": {
+                        "sFirst": "Primeiro",
+                        "sPrevious": "Anterior",
+                        "sNext": "Seguinte",
+                        "sLast": "&Uacute;ltimo"
+                    }
+                },
+                "bJQueryUI": true,
+                "bAutoWidth": false,
+                "sPaginationType": "full_numbers",
+                "aoColumns": [
+                    { "sName": "Id", "bVisible": false },
+                    { "sName": "Nome" },
+                    { "sName": "Email" },
+                    { "sName": "DataDeNascimento" },
+                    { "sName": "Celular" },
+                    { "sName": "TelefoneResidencial" }
+                ]
+            });
+        });
+    </script>
+}
+@using (Html.BeginForm())
+{
+    <input type="submit" id="btnImportFile" value="Import File" />
+    <hr />
+    if (ViewBag.Errors != null)
+    {
+    <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+        <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+        <strong>Ocorreram os seguintes erros ao processar o arquivo:</strong>
+        <ul>
+            @foreach (var erro in ViewBag.Errors)
+            {
+                <li>@erro</li>
+            }
+        </ul>
+    </div>
+    <hr />
+    }
+    
+    <table id="grid">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    E-mail
+                </th>
+                <th>
+                    Data de Nascimento
+                </th>
+                <th>
+                    Celular
+                </th>
+                <th>
+                    Telefone Residencial
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var reg in Model)
+                {
+                <tr>
+                    <td>@reg.Id
+                    </td>
+                    <td>@reg.Nome
+                    </td>
+                    <td>@reg.Email
+                    </td>
+                    <td>@reg.DataNascimento
+                    </td>
+                    <td>@reg.Celular
+                    </td>
+                    <td>@reg.TelefoneResidencial
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
